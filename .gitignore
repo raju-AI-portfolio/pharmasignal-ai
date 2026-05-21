@@ -1,0 +1,22 @@
+# Environment files with secrets - never commit these
+.env
+*.env
+
+# Python virtual environments
+.venv
+venv
+__pycache__
+*.pyc
+*.pyo
+
+# VS Code
+.vscode
+
+# Mac files
+.DS_Store
+
+# Terraform state files (contain sensitive data)
+*.tfstate
+*.tfstate.backup
+.terraform
+
