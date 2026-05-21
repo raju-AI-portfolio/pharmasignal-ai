@@ -20,3 +20,11 @@ __pycache__
 *.tfstate.backup
 .terraform
 
+
+# ChromaDB data files
+services/rag/data/chroma/
+services/rag/data/documents/
+
+# Data directories
+data/raw/
+data/processed/
