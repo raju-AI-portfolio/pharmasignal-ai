@@ -1,0 +1,40 @@
+
+# Signal Detection Methodology in Pharmacovigilance
+
+## Quantitative Signal Detection Methods
+
+### Proportional Reporting Ratio (PRR)
+PRR = (a/b) / (c/d)
+Where:
+- a = number of reports for drug X with reaction Y
+- b = number of reports for drug X without reaction Y  
+- c = number of reports for all other drugs with reaction Y
+- d = number of reports for all other drugs without reaction Y
+
+Signal threshold: PRR >= 2, Chi-square >= 4, case count >= 3
+
+### Reporting Odds Ratio (ROR)
+ROR = (a/b) / (c/d) — similar interpretation to PRR
+Signal threshold: Lower bound of 95% CI > 1
+
+## Qualitative Signal Detection
+- Literature monitoring
+- Spontaneous report review
+- Clinical trial data review
+- Post-marketing surveillance
+
+## Signal Validation Process
+1. Data mining to identify potential signal
+2. Clinical assessment of cases
+3. Literature review
+4. Causality assessment
+5. Risk-benefit evaluation
+6. Regulatory action if required
+
+## Signal Prioritisation
+Signals are prioritised based on:
+- Seriousness of the reaction
+- Frequency of reporting
+- Unexpected nature of the reaction
+- Vulnerable patient populations affected
+        

@@ -1,0 +1,29 @@
+
+# GDPR Requirements for Clinical and Safety Data
+
+## Legal Basis for Processing
+Processing of health data requires explicit consent or another legal basis under Article 9 GDPR.
+
+## Data Subject Rights
+- Right to access their personal data
+- Right to rectification of inaccurate data
+- Right to erasure (right to be forgotten)
+- Right to data portability
+
+## Pseudonymisation Requirements
+Patient data in safety reports must be pseudonymised:
+- Replace patient identifiers with codes
+- Store mapping table separately with strict access controls
+- Never include direct identifiers in regulatory submissions
+
+## Data Retention
+- Clinical trial data: Minimum 25 years after trial completion
+- Pharmacovigilance data: Minimum 10 years after product withdrawal
+- Safety reports: Lifetime of product plus 10 years
+
+## Cross-border Data Transfer
+Transfer of personal data outside EU requires:
+- Adequacy decision by European Commission, OR
+- Appropriate safeguards (Standard Contractual Clauses), OR
+- Binding Corporate Rules for intra-group transfers
+        

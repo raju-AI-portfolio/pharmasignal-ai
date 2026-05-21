@@ -1,0 +1,30 @@
+
+# Adverse Event Definitions and Classification
+
+## What is an Adverse Event?
+An adverse event (AE) is any untoward medical occurrence in a patient administered a pharmaceutical product, 
+which does not necessarily have a causal relationship with the treatment.
+
+## Serious Adverse Events (SAE)
+A serious adverse event is any untoward medical occurrence that:
+- Results in death
+- Is life-threatening
+- Requires inpatient hospitalisation or prolongation of existing hospitalisation
+- Results in persistent or significant disability/incapacity
+- Is a congenital anomaly/birth defect
+- Is a medically important condition
+
+## Adverse Event Severity Grades
+- Grade 1: Mild — asymptomatic or mild symptoms
+- Grade 2: Moderate — minimal local or noninvasive intervention indicated
+- Grade 3: Severe — hospitalisation indicated
+- Grade 4: Life-threatening — urgent intervention indicated
+- Grade 5: Death related to adverse event
+
+## Causality Assessment
+- Certain: A clinical event with plausible time relationship to drug intake
+- Probable: A clinical event with reasonable time relationship to drug intake
+- Possible: A clinical event with reasonable time relationship to drug intake but could be explained by other causes
+- Unlikely: A clinical event whose time relationship to drug intake makes a connection improbable
+- Unassessable: Insufficient data to assess causality
+        

@@ -1,0 +1,34 @@
+
+# Pharmacovigilance Guidelines and Requirements
+
+## ICH E2B Requirements
+Individual Case Safety Reports (ICSRs) must be submitted electronically using the ICH E2B format.
+
+### Minimum Data Requirements for ICSR Submission
+1. An identifiable reporter
+2. An identifiable patient
+3. A suspected adverse reaction
+4. A suspected medicinal product
+
+## Expedited Reporting Requirements
+### 15-day Expedited Reports
+Fatal or life-threatening unexpected suspected adverse reactions must be reported within 15 calendar days.
+
+### 7-day Expedited Reports  
+Fatal or life-threatening unexpected suspected adverse reactions that are serious must be reported within 7 calendar days.
+
+## Signal Detection
+A safety signal is information arising from one or multiple sources suggesting a new potentially causal 
+association between an intervention and an event.
+
+### Disproportionality Analysis
+- Proportional Reporting Ratio (PRR): Values greater than 2 with chi-square greater than 4 indicate a signal
+- Reporting Odds Ratio (ROR): Similar threshold applies
+- Minimum case threshold: At least 3 cases required
+
+## QPPV Responsibilities
+The Qualified Person for Pharmacovigilance (QPPV) is responsible for:
+- Oversight of the pharmacovigilance system
+- Acting as contact point for regulatory authorities
+- Ensuring appropriate action is taken when required
+        
