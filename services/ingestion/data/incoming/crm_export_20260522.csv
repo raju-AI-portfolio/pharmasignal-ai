@@ -1,0 +1,4 @@
+report_id,drug_name,reactions,serious,patient_age,patient_sex,outcome
+CRM-001,WARFARIN,Bleeding|Bruising,Yes,72,Male,Hospitalized
+CRM-002,LISINOPRIL,Dry cough|Angioedema,Yes,55,Female,Recovered
+CRM-003,ATORVASTATIN,Muscle pain|Weakness,No,61,Male,Ongoing
