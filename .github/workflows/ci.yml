@@ -1,0 +1,69 @@
+name: PharmaSignal CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  lint-and-test:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh && echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Test ingestion service imports
+        run: |
+          cd services/ingestion
+          uv run python3 -c "from app.models.report import AdverseEventReport; print('Ingestion models OK')"
+
+      - name: Test RAG service imports
+        run: |
+          cd services/rag
+          uv run python3 -c "from app.services.embedder import chunk_text; print('RAG service OK')"
+
+      - name: Test orchestrator imports
+        run: |
+          cd services/orchestrator
+          uv run python3 -c "from app.models.state import AgentState; print('Orchestrator OK')"
+
+      - name: Test review API imports
+        run: |
+          cd services/review-api
+          uv run python3 -c "from app.models.review import ReviewCase; print('Review API OK')"
+
+  build-docker-images:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: lint-and-test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build ingestion image
+        run: docker build -t pharmasignal-ingestion:latest ./services/ingestion
+
+      - name: Build RAG image
+        run: docker build -t pharmasignal-rag:latest ./services/rag
+
+      - name: Build orchestrator image
+        run: docker build -t pharmasignal-orchestrator:latest ./services/orchestrator
+
+      - name: Build review-api image
+        run: docker build -t pharmasignal-review-api:latest ./services/review-api
+
+      - name: Confirm all images built
+        run: docker images | grep pharmasignal
