@@ -28,3 +28,9 @@ services/rag/data/documents/
 # Data directories
 data/raw/
 data/processed/
+
+# Terraform variables with secrets
+infrastructure/terraform/terraform.tfvars
+infrastructure/terraform/.terraform/
+infrastructure/terraform/*.tfstate
+infrastructure/terraform/*.tfstate.backup
