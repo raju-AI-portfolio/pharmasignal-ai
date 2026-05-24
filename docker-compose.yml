@@ -1,0 +1,94 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: pharma-postgres
+    environment:
+      POSTGRES_DB: pharmasignal
+      POSTGRES_USER: pharma
+      POSTGRES_PASSWORD: localdev
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pharma -d pharmasignal"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: pharma-chromadb
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+
+  ingestion:
+    build: ./services/ingestion
+    container_name: pharma-ingestion
+    ports:
+      - "8001:8001"
+    environment:
+      DATABASE_URL: postgresql://pharma:localdev@postgres:5432/pharmasignal
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT}
+      AZURE_OPENAI_KEY: ${AZURE_OPENAI_KEY}
+      AZURE_OPENAI_CHAT_DEPLOYMENT: ${AZURE_OPENAI_CHAT_DEPLOYMENT}
+      AZURE_OPENAI_EMBEDDING_DEPLOYMENT: ${AZURE_OPENAI_EMBEDDING_DEPLOYMENT}
+      AZURE_OPENAI_API_VERSION: ${AZURE_OPENAI_API_VERSION}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: uvicorn main:app --host 0.0.0.0 --port 8001
+
+  rag:
+    build: ./services/rag
+    container_name: pharma-rag
+    ports:
+      - "8002:8002"
+    environment:
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT}
+      AZURE_OPENAI_KEY: ${AZURE_OPENAI_KEY}
+      AZURE_OPENAI_EMBEDDING_DEPLOYMENT: ${AZURE_OPENAI_EMBEDDING_DEPLOYMENT}
+      AZURE_OPENAI_API_VERSION: ${AZURE_OPENAI_API_VERSION}
+      VECTOR_STORE: chroma
+      CHROMA_PATH: ./data/chroma
+    depends_on:
+      - chromadb
+    command: uvicorn main:app --host 0.0.0.0 --port 8002
+
+  orchestrator:
+    build: ./services/orchestrator
+    container_name: pharma-orchestrator
+    ports:
+      - "8003:8003"
+    environment:
+      AZURE_OPENAI_ENDPOINT: ${AZURE_OPENAI_ENDPOINT}
+      AZURE_OPENAI_KEY: ${AZURE_OPENAI_KEY}
+      AZURE_OPENAI_CHAT_DEPLOYMENT: ${AZURE_OPENAI_CHAT_DEPLOYMENT}
+      AZURE_OPENAI_API_VERSION: ${AZURE_OPENAI_API_VERSION}
+      RAG_SERVICE_URL: http://rag:8002
+      INGESTION_SERVICE_URL: http://ingestion:8001
+    depends_on:
+      - ingestion
+      - rag
+    command: uvicorn main:app --host 0.0.0.0 --port 8003
+
+  review-api:
+    build: ./services/review-api
+    container_name: pharma-review-api
+    ports:
+      - "8004:8004"
+    environment:
+      DATABASE_URL: postgresql://pharma:localdev@postgres:5432/pharmasignal
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: uvicorn main:app --host 0.0.0.0 --port 8004
+
+volumes:
+  pg_data:
+  chroma_data:
