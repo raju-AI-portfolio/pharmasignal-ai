@@ -127,7 +127,7 @@ The core of PharmaSignal AI is a **LangGraph StateGraph** with five specialist a
 
 <img width="1691" height="930" alt="AI agent and data flow diagram" src="https://github.com/user-attachments/assets/e4c2e252-0e91-4165-a1b0-ac64604be78c" />
 
-```
+---
 
 ### Signal detection statistics
 
