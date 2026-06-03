@@ -95,12 +95,16 @@ Adverse event report arrives from any channel
 
 <img width="2720" height="4800" alt="PharmaSignal_AI_Solution_Architecture" src="https://github.com/user-attachments/assets/a67d5dce-9009-4e8d-ab27-2e7f96ef3b4b" />
 
+---
+## Key Architecture Decisions
 
-```
-
-### Architecture decisions
-Architecture decisions
-DecisionRationaleLangGraph over single LLM call5 agents have distinct responsibilities, tools, and output schemas. Signal Agent uses pure Python stats — no LLM. Parallel execution of Medical + Signal agents.Azure Container Apps (PaaS)Zero server management, auto-scaling, built-in observability. Lower operational overhead vs AKS for PoC.ChromaDB local / Azure AI Search prodChromaDB for zero-cost local development. Azure AI Search for production with hybrid vector + keyword search and semantic ranking.Human-in-the-loop by designRegulatory requirement — no AI system can submit to FDA without qualified human approval. Enforced at architecture level, not policy.PostgreSQL over NoSQLRegulatory audit trail requires ACID transactions and immutability guarantees.
+| Architecture Decision | Business / Technical Justification |
+|----------------------|------------------------------------|
+| **Multi-Agent Architecture (LangGraph)** | Separates responsibilities across five specialized agents, improving maintainability, explainability, scalability, and independent evolution of workflows. Enables parallel execution where appropriate. |
+| **Azure Container Apps** | Managed PaaS platform providing auto-scaling, simplified operations, integrated monitoring, and faster time-to-market compared with Kubernetes-based alternatives for the initial release. |
+| **ChromaDB → Azure AI Search Migration Path** | Supports low-cost local development while providing a seamless transition to enterprise-grade semantic and hybrid retrieval capabilities in production. |
+| **Human-in-the-Loop Governance** | Ensures regulatory compliance by requiring expert review and approval before any FDA submission. Governance controls are embedded directly into the application architecture. |
+| **PostgreSQL as System of Record** | Supports ACID-compliant transactions, complete auditability, referential integrity, and immutable regulatory evidence required for GxP and pharmacovigilance environments. |
 
 🔧 Microservices
 Five independent services, each with its own responsibility, database access, and deployment unit.
