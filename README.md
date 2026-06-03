@@ -96,32 +96,15 @@ Adverse event report arrives from any channel
 <img width="2720" height="4800" alt="PharmaSignal_AI_Solution_Architecture" src="https://github.com/user-attachments/assets/a67d5dce-9009-4e8d-ab27-2e7f96ef3b4b" />
 
 
-
 ```
 
 ### Architecture decisions
+Architecture decisions
+DecisionRationaleLangGraph over single LLM call5 agents have distinct responsibilities, tools, and output schemas. Signal Agent uses pure Python stats — no LLM. Parallel execution of Medical + Signal agents.Azure Container Apps (PaaS)Zero server management, auto-scaling, built-in observability. Lower operational overhead vs AKS for PoC.ChromaDB local / Azure AI Search prodChromaDB for zero-cost local development. Azure AI Search for production with hybrid vector + keyword search and semantic ranking.Human-in-the-loop by designRegulatory requirement — no AI system can submit to FDA without qualified human approval. Enforced at architecture level, not policy.PostgreSQL over NoSQLRegulatory audit trail requires ACID transactions and immutability guarantees.
 
-| Decision | Rationale |
-|----------|-----------|
-| **LangGraph over single LLM call** | 5 agents have distinct responsibilities, tools, and output schemas. Signal Agent uses pure Python stats — no LLM. Parallel execution of Medical + Signal agents. |
-| **Azure Container Apps (PaaS)** | Zero server management, auto-scaling, built-in observability. Lower operational overhead vs AKS for PoC. |
-| **ChromaDB local / Azure AI Search prod** | ChromaDB for zero-cost local development. Azure AI Search for production with hybrid vector + keyword search and semantic ranking. |
-| **Human-in-the-loop by design** | Regulatory requirement — no AI system can submit to FDA without qualified human approval. Enforced at architecture level, not policy. |
-| **PostgreSQL over NoSQL** | Regulatory audit trail requires ACID transactions and immutability guarantees. |
-
----
-
-## 🔧 Microservices
-
+🔧 Microservices
 Five independent services, each with its own responsibility, database access, and deployment unit.
-
-| Service | Port | Responsibility | Technology |
-|---------|------|----------------|------------|
-| **Ingestion** | 8001 | Multi-channel AE intake · parse · deduplicate · normalise | FastAPI · SQLAlchemy · PostgreSQL |
-| **RAG** | 8002 | Regulatory document search · embeddings · vector store | FastAPI · ChromaDB · Azure OpenAI |
-| **Orchestrator** | 8003 | 5-agent LangGraph workflow · state machine · routing | FastAPI · LangGraph · GPT-4o · httpx |
-| **Review API** | 8004 | Review queue · HITL decisions · audit trail | FastAPI · SQLAlchemy · PostgreSQL |
-| **Notifications** | 8005 | QPPV escalation emails · approval alerts | FastAPI · aiosmtplib · MailHog |
+ServicePortResponsibilityTechnologyIngestion8001Multi-channel AE intake · parse · deduplicate · normaliseFastAPI · SQLAlchemy · PostgreSQLRAG8002Regulatory document search · embeddings · vector storeFastAPI · ChromaDB · Azure OpenAIOrchestrator80035-agent LangGraph workflow · state machine · routingFastAPI · LangGraph · GPT-4o · httpxReview API8004Review queue · HITL decisions · audit trailFastAPI · SQLAlchemy · PostgreSQLNotifications8005QPPV escalation emails · approval alertsFastAPI · aiosmtplib · MailHog
 
 ---
 
