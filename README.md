@@ -128,53 +128,6 @@ The core of PharmaSignal AI is a **LangGraph StateGraph** with five specialist a
 <img width="1691" height="930" alt="AI agent and data flow diagram" src="https://github.com/user-attachments/assets/e4c2e252-0e91-4165-a1b0-ac64604be78c" />
 
 ```
-Report data loaded into AgentState
-              │
-              ▼
-┌─────────────────────────────────────┐
-│          Triage Agent               │
-│  GPT-4o · ICH E2B criteria          │
-│  temp=0 · 150 tokens                │
-│  → severity: SERIOUS / NON-SERIOUS  │
-│  → triage_reasoning: text           │
-└──────────────────┬──────────────────┘
-                   │  (parallel execution)
-       ┌───────────┴────────────┐
-       ▼                        ▼
-┌──────────────────┐   ┌────────────────────┐
-│  Medical Agent   │   │   Signal Agent     │
-│  Calls RAG :8002 │   │   Pure Python      │
-│  ChromaDB search │   │   PRR · ROR · chi² │
-│  → regulatory    │   │   WHO thresholds   │
-│    context       │   │   → signal_detected│
-└──────┬───────────┘   └────────┬───────────┘
-       └───────────┬────────────┘
-                   ▼
-┌─────────────────────────────────────┐
-│         Narrative Agent             │
-│  GPT-4o · reads all prior outputs   │
-│  temp=0 · 500 tokens max            │
-│  → 7-section ICH E2B narrative      │
-│     1. Patient background           │
-│     2. Drug exposure                │
-│     3. Adverse event                │
-│     4. Outcome                      │
-│     5. Signal context (PRR/ROR)     │
-│     6. Regulatory assessment        │
-│     7. Data gaps                    │
-└──────────────────┬──────────────────┘
-                   ▼
-┌─────────────────────────────────────┐
-│        Escalation Agent             │
-│  Pure Python · weighted scoring     │
-│  Severity 40% · Signal 30%          │
-│  Data completeness 20% · Cases 10%  │
-│  → risk_score: 0–100                │
-│  → score < 40:  AUTO-CLOSE          │
-│  → score 40–70: FLAG (7-day SLA)    │
-│  → score > 70:  ESCALATE (24hr)     │
-└─────────────────────────────────────┘
-```
 
 ### Signal detection statistics
 
