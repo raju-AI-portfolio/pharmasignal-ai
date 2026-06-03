@@ -93,7 +93,8 @@ Adverse event report arrives from any channel
 
 **Solution Architecture**
 
-![Uploading PharmaSignal_AI_Solution_Architecture.png…]()
+<img width="2720" height="4800" alt="PharmaSignal_AI_Solution_Architecture" src="https://github.com/user-attachments/assets/a67d5dce-9009-4e8d-ab27-2e7f96ef3b4b" />
+
 
 
 ```
