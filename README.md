@@ -125,6 +125,8 @@ The solution follows a domain-oriented microservices architecture where each ser
 
 The core of PharmaSignal AI is a **LangGraph StateGraph** with five specialist agents. Each agent receives the shared `AgentState` TypedDict, performs its analysis, writes outputs back to state, and passes control forward.
 
+<img width="1691" height="930" alt="AI agent and data flow diagram" src="https://github.com/user-attachments/assets/e4c2e252-0e91-4165-a1b0-ac64604be78c" />
+
 ```
 Report data loaded into AgentState
               │
