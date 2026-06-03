@@ -91,10 +91,11 @@ Adverse event report arrives from any channel
 
 ## 🏛 Architecture
 
-### High-level architecture
+**Solution Architecture**
 
-```
-<img width="2720" height="4800" alt="PharmaSignal_AI_Solution_Architecture" src="https://github.com/user-attachments/assets/66d43b1a-63ec-4e46-be84-cc284914b41e" />
+<img width="2720" height="4800" alt="PharmaSignal_AI_Solution_Architecture" src="https://github.com/user-attachments/assets/47c58887-f6fc-4c42-95d8-586873615bd5" />
+
+
 
 ```
 
