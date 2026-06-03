@@ -591,6 +591,8 @@ Developer push → PR Gate → Build → Dev Deploy → Staging → Production
 | **Production** | 2-person approval | Blue-green AKS · 10% canary · Auto-rollback | GxP gate |
 
 Every production deployment is logged to Azure Monitor for **21 CFR Part 11** audit trail compliance.
+---
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/56976391-b8a4-4b61-a655-43a05ea2261f" />
 
 ---
 
