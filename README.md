@@ -106,9 +106,19 @@ Adverse event report arrives from any channel
 | **Human-in-the-Loop Governance** | Ensures regulatory compliance by requiring expert review and approval before any FDA submission. Governance controls are embedded directly into the application architecture. |
 | **PostgreSQL as System of Record** | Supports ACID-compliant transactions, complete auditability, referential integrity, and immutable regulatory evidence required for GxP and pharmacovigilance environments. |
 
-🔧 Microservices
-Five independent services, each with its own responsibility, database access, and deployment unit.
-ServicePortResponsibilityTechnologyIngestion8001Multi-channel AE intake · parse · deduplicate · normaliseFastAPI · SQLAlchemy · PostgreSQLRAG8002Regulatory document search · embeddings · vector storeFastAPI · ChromaDB · Azure OpenAIOrchestrator80035-agent LangGraph workflow · state machine · routingFastAPI · LangGraph · GPT-4o · httpxReview API8004Review queue · HITL decisions · audit trailFastAPI · SQLAlchemy · PostgreSQLNotifications8005QPPV escalation emails · approval alertsFastAPI · aiosmtplib · MailHog
+---
+
+## 🔧 Microservices Architecture
+
+The solution follows a domain-oriented microservices architecture where each service owns its business capability, APIs, persistence layer, and deployment lifecycle.
+
+| Microservice | Port | Business Capability | Key Responsibilities | Technology Stack |
+|--------------|------|---------------------|----------------------|------------------|
+| **Ingestion Service** | 8001 | Case Intake Management | Multi-channel adverse event intake, validation, parsing, deduplication, normalization, and case creation. | FastAPI, SQLAlchemy, PostgreSQL |
+| **RAG Service** | 8002 | Knowledge Retrieval | Regulatory document ingestion, embedding generation, vector search, semantic retrieval, and context enrichment. | FastAPI, ChromaDB, Azure AI Search, Azure OpenAI |
+| **Orchestrator Service** | 8003 | AI Workflow Orchestration | Multi-agent coordination, workflow execution, state management, agent routing, and response aggregation. | FastAPI, LangGraph, GPT-4o, httpx |
+| **Review Service** | 8004 | Human Oversight & Governance | Review queue management, approval workflows, audit trail generation, and compliance enforcement. | FastAPI, SQLAlchemy, PostgreSQL |
+| **Notification Service** | 8005 | Communication & Escalation | QPPV notifications, approval alerts, workflow status updates, and escalation management. | FastAPI, aiosmtplib, MailHog |
 
 ---
 
