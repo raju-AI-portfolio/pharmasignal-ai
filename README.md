@@ -107,6 +107,18 @@ Adverse event report arrives from any channel
 | **PostgreSQL as System of Record** | Supports ACID-compliant transactions, complete auditability, referential integrity, and immutable regulatory evidence required for GxP and pharmacovigilance environments. |
 
 ---
+## 🔧 Microservices Architecture
+
+The solution follows a domain-oriented microservices architecture where each service owns its business capability, APIs, persistence layer, and deployment lifecycle.
+
+| Microservice | Port | Business Capability | Key Responsibilities | Technology Stack |
+|--------------|------|---------------------|----------------------|------------------|
+| **Ingestion Service** | 8001 | Case Intake Management | Multi-channel adverse event intake, validation, parsing, deduplication, normalization, and case creation. | FastAPI, SQLAlchemy, PostgreSQL |
+| **RAG Service** | 8002 | Knowledge Retrieval | Regulatory document ingestion, embedding generation, vector search, semantic retrieval, and context enrichment. | FastAPI, ChromaDB, Azure AI Search, Azure OpenAI |
+| **Orchestrator Service** | 8003 | AI Workflow Orchestration | Multi-agent coordination, workflow execution, state management, agent routing, and response aggregation. | FastAPI, LangGraph, GPT-4o, httpx |
+| **Review Service** | 8004 | Human Oversight & Governance | Review queue management, approval workflows, audit trail generation, and compliance enforcement. | FastAPI, SQLAlchemy, PostgreSQL |
+| **Notification Service** | 8005 | Communication & Escalation | QPPV notifications, approval alerts, workflow status updates, and escalation management. | FastAPI, aiosmtplib, MailHog |
+---
 
 ## 🔧 Microservices Architecture
 
