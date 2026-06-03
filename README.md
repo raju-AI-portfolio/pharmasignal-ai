@@ -530,6 +530,7 @@ Every production deployment is logged to Azure Monitor for **21 CFR Part 11** au
 
 <img width="1024" height="1536" alt="Security and compliance architecht " src="https://github.com/user-attachments/assets/cfeaa826-2b8e-43c2-8b82-2be3a79e6b96" />
 
+---
 
 | Control | Implementation | Status |
 |---------|----------------|--------|
@@ -549,8 +550,7 @@ Every production deployment is logged to Azure Monitor for **21 CFR Part 11** au
 
 ## 🔒 Governance & Compliance
 
-![Uploading ChatGPT Image Jun 3, 2026, 10_53_55 AM.png…]()
-
+<img width="1024" height="1536" alt="Governance" src="https://github.com/user-attachments/assets/f78708cd-e871-49cb-909b-4d80436e37ad" />
 
 
 ### Regulatory standards
