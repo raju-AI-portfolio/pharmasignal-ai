@@ -62,10 +62,10 @@ Every pharmaceutical company selling a drug must monitor adverse events reported
 
 PharmaSignal AI is a **production-grade multi-agent AI platform** that automates the end-to-end pharmacovigilance workflow while maintaining full human oversight for regulatory compliance.
 
-```
+
 <img width="1024" height="1536" alt="Pharmasignal Business Architecture " src="https://github.com/user-attachments/assets/386fb31f-539c-4a42-9bc5-6e683d77ff9a" />
 
-```
+
 
 ### Business impact
 
