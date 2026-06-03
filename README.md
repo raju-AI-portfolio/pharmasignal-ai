@@ -94,30 +94,8 @@ Adverse event report arrives from any channel
 ### High-level architecture
 
 ```
-┌──────────────────────────────────────────────────────────────────────┐
-│                     DATA INGESTION CHANNELS                          │
-│  FDA FAERS API  │  REST API (call center)  │  CSV file drop (CRM)   │
-└──────────────────────────┬───────────────────────────────────────────┘
-                           │  normalise all formats
-┌──────────────────────────▼───────────────────────────────────────────┐
-│             AZURE CLOUD PLATFORM — PaaS · Sweden Central             │
-│                                                                      │
-│  ┌─────────────────┐  ┌──────────────────┐  ┌──────────────────┐   │
-│  │ Ingestion :8001 │  │   RAG Svc :8002  │  │  Azure OpenAI    │   │
-│  │ FastAPI · PG    │→ │ ChromaDB · ada   │→ │  GPT-4o          │   │
-│  └────────┬────────┘  └──────────────────┘  └──────────────────┘   │
-│           │                                                          │
-│  ┌────────▼─────────────────────────────────────────────────────┐   │
-│  │       ORCHESTRATOR :8003 — LangGraph State Machine           │   │
-│  │  Triage → Medical → Signal → Narrative → Escalation          │   │
-│  └────────────────────────────┬─────────────────────────────────┘   │
-│                               │                                      │
-│  ┌───────────────┐  ┌─────────┴──────┐  ┌────────────────────────┐ │
-│  │  PostgreSQL   │  │  Review :8004  │  │   Notifications :8005  │ │
-│  │  AE reports   │  │  HITL · Audit  │  │   QPPV email · SMTP    │ │
-│  │  Reviews      │  │  React :3000   │  │   MailHog local        │ │
-│  └───────────────┘  └────────────────┘  └────────────────────────┘ │
-└──────────────────────────────────────────────────────────────────────┘
+<img width="2720" height="4800" alt="PharmaSignal_AI_Solution_Architecture" src="https://github.com/user-attachments/assets/66d43b1a-63ec-4e46-be84-cc284914b41e" />
+
 ```
 
 ### Architecture decisions
