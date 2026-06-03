@@ -526,7 +526,31 @@ Every production deployment is logged to Azure Monitor for **21 CFR Part 11** au
 
 ---
 
+## 🛡 Security Controls
+
+<img width="1024" height="1536" alt="Security and compliance architecht " src="https://github.com/user-attachments/assets/cfeaa826-2b8e-43c2-8b82-2be3a79e6b96" />
+
+
+| Control | Implementation | Status |
+|---------|----------------|--------|
+| **Azure Key Vault** | pharmasignal-kv · OpenAI key stored as secret | ✅ Live |
+| **No secrets in code** | .gitignore · GitHub secret scanning blocked push | ✅ Verified |
+| **Encryption at rest** | PostgreSQL TDE · Blob SSE · AES-256 Azure default | ✅ Active |
+| **Encryption in transit** | TLS all Azure services · HTTPS all API calls | ✅ Active |
+| **Trivy container scan** | All 5 images on every PR · blocks on critical CVE | ✅ Pipeline green |
+| **Checkov IaC scan** | Terraform scanned every PR · misconfiguration detection | ✅ Pipeline green |
+| **Branch protection** | No direct push to main · PR required · all checks must pass | ✅ Active |
+| **GxP 2-person gate** | Production deployment requires two separate approvals | ✅ Built |
+| **Content filtering** | Azure OpenAI DefaultV2 filter on all deployments | ✅ Configured |
+| **Audit trail** | Immutable AuditLog PostgreSQL table · every action | ✅ Tested |
+---
+
+
+
 ## 🔒 Governance & Compliance
+
+![Uploading image.png…]()
+
 
 ### Regulatory standards
 
@@ -550,23 +574,7 @@ Risk score > 70  →  ESCALATE       (QPPV email, 24-hour deadline)
 
 ---
 
-## 🛡 Security Controls
 
-<img width="1024" height="1536" alt="Security and compliance architecht " src="https://github.com/user-attachments/assets/cfeaa826-2b8e-43c2-8b82-2be3a79e6b96" />
-
-
-| Control | Implementation | Status |
-|---------|----------------|--------|
-| **Azure Key Vault** | pharmasignal-kv · OpenAI key stored as secret | ✅ Live |
-| **No secrets in code** | .gitignore · GitHub secret scanning blocked push | ✅ Verified |
-| **Encryption at rest** | PostgreSQL TDE · Blob SSE · AES-256 Azure default | ✅ Active |
-| **Encryption in transit** | TLS all Azure services · HTTPS all API calls | ✅ Active |
-| **Trivy container scan** | All 5 images on every PR · blocks on critical CVE | ✅ Pipeline green |
-| **Checkov IaC scan** | Terraform scanned every PR · misconfiguration detection | ✅ Pipeline green |
-| **Branch protection** | No direct push to main · PR required · all checks must pass | ✅ Active |
-| **GxP 2-person gate** | Production deployment requires two separate approvals | ✅ Built |
-| **Content filtering** | Azure OpenAI DefaultV2 filter on all deployments | ✅ Configured |
-| **Audit trail** | Immutable AuditLog PostgreSQL table · every action | ✅ Tested |
 
 
 ---
