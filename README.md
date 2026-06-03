@@ -549,7 +549,8 @@ Every production deployment is logged to Azure Monitor for **21 CFR Part 11** au
 
 ## 🔒 Governance & Compliance
 
-![Uploading image.png…]()
+![Uploading ChatGPT Image Jun 3, 2026, 10_53_55 AM.png…]()
+
 
 
 ### Regulatory standards
