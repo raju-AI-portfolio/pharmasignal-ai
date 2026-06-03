@@ -63,18 +63,8 @@ Every pharmaceutical company selling a drug must monitor adverse events reported
 PharmaSignal AI is a **production-grade multi-agent AI platform** that automates the end-to-end pharmacovigilance workflow while maintaining full human oversight for regulatory compliance.
 
 ```
-Adverse event report arrives from any channel
-              ↓
-  Multi-channel intake (FDA FAERS · Call center · CRM · Mobile)
-              ↓
-  5 AI agents process in sequence via LangGraph:
-    Triage → Medical → Signal → Narrative → Escalation
-              ↓
-  Human reviewer: Approve · Reject · Escalate to QPPV
-              ↓
-  Automatic QPPV notification with narrative + reviewer comments
-              ↓
-  Immutable audit trail — every action permanently logged
+<img width="1024" height="1536" alt="Pharmasignal Business Architecture " src="https://github.com/user-attachments/assets/386fb31f-539c-4a42-9bc5-6e683d77ff9a" />
+
 ```
 
 ### Business impact
