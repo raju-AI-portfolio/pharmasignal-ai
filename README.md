@@ -74,7 +74,8 @@ it fast enough, consistently enough, and at sufficient scale to meet
 both regulatory obligations and patient safety requirements 
 simultaneously.
 
-Solution Statement
+
+## 💡 Solution Statement  
 PharmaSignal AI is an enterprise multi-agent pharmacovigilance platform 
 that automates the end-to-end adverse event workflow — from multi-channel 
 intake through AI-powered analysis to human-in-the-loop review — while 
@@ -110,43 +111,6 @@ The result: adverse event processing time reduced from 30 minutes to 3
 minutes per report, manual effort reduced by 80%, and a system 
 architecture that ensures no serious adverse event misses its regulatory 
 reporting deadline.
-
-Short versions for GitHub About section and LinkedIn
-One sentence (GitHub About field):
-Multi-agent AI platform that automates pharmacovigilance adverse event 
-triage, ICH E2B narrative generation, and safety signal detection using 
-LangGraph, Azure OpenAI GPT-4o, and RAG — with human-in-the-loop 
-review and 21 CFR Part 11 audit trail.
-Two sentences (LinkedIn project description):
-Built PharmaSignal AI to solve a real regulatory compliance challenge 
-in the pharmaceutical industry. The platform uses a 5-agent LangGraph 
-workflow to automate adverse event triage, ICH E2B safety narrative 
-writing, and PRR/ROR signal detection — reducing processing time from 
-30 minutes to 3 minutes per report while enforcing human-in-the-loop 
-governance and full audit trail compliance.
-Three sentences (resume project bullet):
-Designed and built PharmaSignal AI — an enterprise multi-agent 
-pharmacovigilance platform using LangGraph, Azure OpenAI GPT-4o, RAG, 
-and 5 FastAPI microservices deployed on Azure PaaS. Implemented ICH E2B 
-narrative generation, PRR/ROR signal detection, and human-in-the-loop 
-review workflow with 21 CFR Part 11 compliant audit trail. Demonstrated 
-full Senior AI Solution Architect stack: multi-agent AI, RAG 
-architecture, Terraform IaC, Kubernetes, GitHub Actions CI/CD with 
-Trivy and Checkov security scanning, and Azure PaaS + IaaS deployment.
-
-How to add to GitHub README
-Add a new section right after the badges and before the Table of Contents:
-markdown## 🎯 Problem Statement
-
-The global pharmaceutical industry processes millions of adverse event 
-reports every year...
-[paste full problem statement]
-
-## 💡 Solution Statement  
-
-PharmaSignal AI is an enterprise multi-agent pharmacovigilance platform...
-[paste full solution statement]
-This goes at the very top of your README — before architecture diagrams — because recruiters read top to bottom and need to understand WHY before they care about HOW.
 
 | Problem | Impact |
 |---------|--------|
