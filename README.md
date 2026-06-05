@@ -121,7 +121,7 @@ reporting deadline.
 
 ---
 
-## 💡 Solution Overview
+## Enterprise Architect (TOGAF)
 
 PharmaSignal AI is a **production-grade multi-agent AI platform** that automates the end-to-end pharmacovigilance workflow while maintaining full human oversight for regulatory compliance.
 
