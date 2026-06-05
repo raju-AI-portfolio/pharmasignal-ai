@@ -120,7 +120,7 @@ reporting deadline.
 | **Multi-channel complexity** | Reports arrive from call centers, CRM, mobile apps, clinical trials, and FAERS simultaneously |
 
 
-**Busine Case Report with ROI Calculation:** https://github.com/raju-AI-portfolio/pharmasignal-ai#:~:text=Business_Case_ROI_PharmaSignal_AI.pdf
+**Busine Case Report with ROI Calculation:** Business_Case_ROI_PharmaSignal_AI.pdf
 
 ---
 
