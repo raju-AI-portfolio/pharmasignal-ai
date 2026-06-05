@@ -52,7 +52,7 @@ reports every year across FDA FAERS, call centers, CRM systems, mobile
 apps, and clinical trials. Each report must be classified for severity, 
 analysed for safety signals, documented with a regulatory compliant 
 narrative, reviewed by a qualified pharmacovigilance professional, and 
-submitted to regulatory authorities — all within a legally mandated 
+submitted to regulatory authorities, all within a legally mandated 
 15 calendar day deadline for serious cases under ICH E2B guidelines.
 
 Today this process is almost entirely manual. A pharmacovigilance 
@@ -97,7 +97,7 @@ Ratio, and chi-square statistics against WHO-standard thresholds — using
 pure Python with no LLM call. The Narrative Agent writes a complete 
 7-section ICH E2B compliant safety narrative incorporating all prior 
 agent outputs. The Escalation Agent assigns a risk score from 0 to 100 
-using weighted factors and routes the case: AUTO-CLOSE for low risk 
+using weighted factors and routes the case: AUTO CLOSE for low risk 
 cases, FLAG for Safety Scientist review, or ESCALATE for immediate QPPV 
 notification.
 
