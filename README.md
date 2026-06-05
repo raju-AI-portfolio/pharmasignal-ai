@@ -50,26 +50,26 @@
 The global pharmaceutical industry processes millions of adverse event 
 reports every year across FDA FAERS, call centers, CRM systems, mobile 
 apps, and clinical trials. Each report must be classified for severity, 
-analysed for safety signals, documented with a regulatory-compliant 
+analysed for safety signals, documented with a regulatory compliant 
 narrative, reviewed by a qualified pharmacovigilance professional, and 
 submitted to regulatory authorities — all within a legally mandated 
-15-calendar-day deadline for serious cases under ICH E2B guidelines.
+15 calendar day deadline for serious cases under ICH E2B guidelines.
 
 Today this process is almost entirely manual. A pharmacovigilance 
 scientist reads each report, searches regulatory guidelines, calculates 
 signal statistics in Excel, writes a safety narrative, and routes the 
 case for approval. One scientist processes 20–30 reports per day. A 
-mid-size pharmaceutical company receiving 500 reports daily requires 
-20–25 full-time scientists — costing $1.6M to $3M annually — just for 
+mid size pharmaceutical company receiving 500 reports daily requires 
+20–25 full time scientists costing $1.6M to $3M annually, just for 
 this single function.
 
-The consequences of failure are severe. Missing a 15-day reporting 
+The consequences of failure are severe. Missing a 15 day reporting 
 deadline triggers FDA warning letters, consent decrees, and financial 
 penalties up to $100 million. Failing to detect a genuine safety signal 
 means patients continue being harmed by a dangerous drug reaction that 
 could have been identified and acted upon months earlier.
 
-The problem is not a shortage of data — it is the inability to process 
+The problem is not a shortage of data, it is the inability to process 
 it fast enough, consistently enough, and at sufficient scale to meet 
 both regulatory obligations and patient safety requirements 
 simultaneously.
@@ -77,8 +77,8 @@ simultaneously.
 
 ## 💡 Solution Statement  
 PharmaSignal AI is an enterprise multi-agent pharmacovigilance platform 
-that automates the end-to-end adverse event workflow — from multi-channel 
-intake through AI-powered analysis to human-in-the-loop review — while 
+that automates the end-to-end adverse event workflow from multi channel 
+intake through AI-powered analysis to human-in-the-loop review, while 
 maintaining full regulatory compliance and human oversight at every step.
 
 The platform ingests adverse event reports from three channels: the FDA 
@@ -97,14 +97,14 @@ Ratio, and chi-square statistics against WHO-standard thresholds — using
 pure Python with no LLM call. The Narrative Agent writes a complete 
 7-section ICH E2B compliant safety narrative incorporating all prior 
 agent outputs. The Escalation Agent assigns a risk score from 0 to 100 
-using weighted factors and routes the case: AUTO-CLOSE for low-risk 
+using weighted factors and routes the case: AUTO-CLOSE for low risk 
 cases, FLAG for Safety Scientist review, or ESCALATE for immediate QPPV 
 notification.
 
 Human oversight is enforced at the architecture level. No case can be 
 submitted to a regulatory authority without explicit human approval 
 through the React review dashboard. Every agent decision, human action, 
-and system event is permanently recorded in an immutable audit trail — 
+and system event is permanently recorded in an immutable audit trail  
 satisfying 21 CFR Part 11 electronic records requirements.
 
 The result: adverse event processing time reduced from 30 minutes to 3 
