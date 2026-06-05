@@ -119,6 +119,9 @@ reporting deadline.
 | **High error risk** | Manual narrative writing leads to inconsistent quality and missed signals |
 | **Multi-channel complexity** | Reports arrive from call centers, CRM, mobile apps, clinical trials, and FAERS simultaneously |
 
+
+**Busine Case Report with ROI Calculation:** https://github.com/raju-AI-portfolio/pharmasignal-ai#:~:text=Business_Case_ROI_PharmaSignal_AI.pdf
+
 ---
 
 ## Enterprise Architecture (TOGAF)
