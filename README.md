@@ -93,7 +93,7 @@ classifies severity using ICH E2B criteria via Azure OpenAI GPT-4o.
 The Medical Agent retrieves relevant regulatory context from a ChromaDB 
 vector store containing indexed ICH, EMA, WHO, and FDA documents. The 
 Signal Agent calculates Proportional Reporting Ratio, Reporting Odds 
-Ratio, and chi-square statistics against WHO-standard thresholds — using 
+Ratio, and chi-square statistics against WHO-standard thresholds using 
 pure Python with no LLM call. The Narrative Agent writes a complete 
 7-section ICH E2B compliant safety narrative incorporating all prior 
 agent outputs. The Escalation Agent assigns a risk score from 0 to 100 
