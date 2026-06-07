@@ -654,11 +654,6 @@ This project demonstrates the complete **Senior AI Solution Architect** skill st
 
 ---
 
-
-## **Demo Screenshots**
-
----
-
 ## 📸 Demo Screenshots
 
 ### 1. Human Review Dashboard — Signal Review Queue
@@ -721,18 +716,6 @@ QPPV escalation email sent **automatically** the moment the Safety Scientist cli
 | **Action required** | Please review within 24 hours |
 | **Narrative** | Full ICH E2B safety narrative included |
 | **Trigger** | Sent automatically on reviewer escalation decision |
-
----
-
-### 6. GitHub Actions CI Pipeline — All Green
-
-<img width="1200" alt="GitHub Actions CI Pipeline Green" src="https://github.com/user-attachments/assets/6af0d4d5-2757-4363-a795-f0ad20248b50" />
-
-- ✅ **40+ pipeline runs** — all successful
-- ✅ Trivy container security scan — all 5 Docker images
-- ✅ Checkov IaC security scan — Terraform configurations
-- ✅ Lint and Test → Build Docker Images — both stages green
-- ✅ Triggered on every push to main branch
 
 ---
 ## 📄 License
