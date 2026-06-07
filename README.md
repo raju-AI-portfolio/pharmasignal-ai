@@ -631,11 +631,6 @@ Risk score > 70  →  ESCALATE       (QPPV email, 24-hour deadline)
 
 ---
 
-
-
-
----
-
 ## 📊 Skills Demonstrated
 
 This project demonstrates the complete **Senior AI Solution Architect** skill stack:
@@ -738,51 +733,6 @@ QPPV escalation email sent **automatically** the moment the Safety Scientist cli
 - ✅ Checkov IaC security scan — Terraform configurations
 - ✅ Lint and Test → Build Docker Images — both stages green
 - ✅ Triggered on every push to main branch
-
----
-
-**1. PharmaSignal AI — Human Review Dashboard**
-<img width="452" height="195" alt="image" src="https://github.com/user-attachments/assets/356b2a22-7439-4817-85f1-a1a0005eb2ea" />
-
-**2. Case Review**
-<img width="452" height="243" alt="image" src="https://github.com/user-attachments/assets/3f81d219-d3fd-4ada-b24b-9cdfcd5b9ace" />
-
-**This shows:**
-✅ Triage reasoning — "Angioedema is life-threatening and meets the ICH E2B serious criteria"
-✅ Signal Analysis — PRR Score, Risk Score 60/100, FLAG routing
-✅ AI-Generated Safety Narrative with all sections visible
-✅ Human Review Decision section — Approve · Reject · Escalate to QPPV buttons
-✅ Reviewer: dr.smith@pharmasignal.com
-
-**3. Human-in-the-Loop — Case ESCALATED · Full Audit Trail · 21 CFR Part 11 · Reviewer Comments Logged**
-<img width="452" height="247" alt="image" src="https://github.com/user-attachments/assets/84dbd380-ebbb-4951-896f-e35733d5ef13" />
-
-**This SHows:**
-✅ Status changed to ESCALATED (purple badge)
-✅ ICH E2B narrative visible — all sections
-✅ Audit Trail showing two entries: 
-o	CASE_CREATED by agent_orchestrator — 24/05/2026
-o	CASE_ESCALATED by dr.smith@pharmasignal.com — 06/06/2026
-o	Reviewer comment: "Lisinopril-induced angioedema is life-threatening. Confirmed serious case. Escalating to QPPV for urgent review within 24 hours."
-✅ Triage reasoning — ICH E2B criteria applied
-✅ Risk Score 60/100
-
-**4. QPPV Email Notification — URGENT Case Escalated**
-<img width="452" height="134" alt="image" src="https://github.com/user-attachments/assets/0216bc1e-bf8c-4ffa-b251-ee8e382944d1" />
-
-**5. QPPV_Escalation_Email_Content**
-<img width="452" height="355" alt="image" src="https://github.com/user-attachments/assets/12fe4c3e-9943-467a-aae8-fa2214b32199" />
-
-**This Shows:**
-✅ Red urgent header — URGENT — QPPV Escalation Required
-✅ Report ID: CRM-002
-✅ Drug: LISINOPRIL
-✅ Risk Score: 60/100
-✅ Escalated by: dr.smith@pharmasignal.com
-✅ Action Required: Please review within 24 hours
-✅ Full ICH E2B safety narrative included in email
-✅ Sent automatically when reviewer clicked Escalate
-<img width="468" height="165" alt="image" src="https://github.com/user-attachments/assets/6af0d4d5-2757-4363-a795-f0ad20248b50" />
 
 ---
 ## 📄 License
