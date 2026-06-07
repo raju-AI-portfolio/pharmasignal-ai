@@ -659,13 +659,87 @@ This project demonstrates the complete **Senior AI Solution Architect** skill st
 
 ---
 
-## 🤝 Contributing
 
-This is a portfolio project demonstrating enterprise AI architecture patterns. Issues and feedback welcome.
+## **Demo Screenshots**
 
 ---
 
-**Demo Screenshots**
+## 📸 Demo Screenshots
+
+### 1. Human Review Dashboard — Signal Review Queue
+
+<img width="1200" alt="PharmaSignal AI Human Review Dashboard" src="https://github.com/user-attachments/assets/356b2a22-7439-4817-85f1-a1a0005eb2ea" />
+
+Risk-sorted case queue showing all adverse event cases with severity classification, risk scores, FLAG/ESCALATE badges, and review status. Safety Scientist can see all pending cases at a glance.
+
+---
+
+### 2. Case Detail — ICH E2B Safety Narrative + Signal Analysis
+
+<img width="1200" alt="Case Review Detail Page" src="https://github.com/user-attachments/assets/3f81d219-d3fd-4ada-b24b-9cdfcd5b9ace" />
+
+| Field | Value |
+|-------|-------|
+| **Triage reasoning** | Angioedema is life-threatening and meets the ICH E2B serious criteria |
+| **Signal Analysis** | PRR Score calculated · Risk Score 60/100 · FLAG routing |
+| **Narrative** | AI-generated 7-section ICH E2B safety narrative |
+| **HITL Decision** | Approve · Reject · Escalate to QPPV buttons |
+| **Reviewer** | dr.smith@pharmasignal.com |
+
+---
+
+### 3. Human-in-the-Loop — Case ESCALATED + 21 CFR Part 11 Audit Trail
+
+<img width="1200" alt="Case Escalated with Full Audit Trail" src="https://github.com/user-attachments/assets/84dbd380-ebbb-4951-896f-e35733d5ef13" />
+
+- ✅ Status changed to **ESCALATED** — enforced at architecture level
+- ✅ Full ICH E2B narrative visible across all 7 sections
+- ✅ Immutable audit trail — every action permanently logged:
+  - `CASE_CREATED` by `agent_orchestrator` — 24/05/2026
+  - `CASE_ESCALATED` by `dr.smith@pharmasignal.com` — 06/06/2026
+  - Reviewer comment: *"Lisinopril-induced angioedema is life-threatening. Confirmed serious case. Escalating to QPPV for urgent review within 24 hours."*
+- ✅ Risk Score 60/100 · Triage reasoning stored · ICH E2B criteria applied
+
+---
+
+### 4. QPPV Email Notification — Auto-triggered on Escalation
+
+<img width="1200" alt="QPPV Email Notification Inbox" src="https://github.com/user-attachments/assets/0216bc1e-bf8c-4ffa-b251-ee8e382944d1" />
+
+QPPV escalation email sent **automatically** the moment the Safety Scientist clicked Escalate — no manual notification required.
+
+---
+
+### 5. QPPV Escalation Email — Full Content with Safety Narrative
+
+<img width="1200" alt="QPPV Escalation Email Full Content" src="https://github.com/user-attachments/assets/12fe4c3e-9943-467a-aae8-fa2214b32199" />
+
+| Field | Value |
+|-------|-------|
+| **Subject** | URGENT — Case Escalated to QPPV: CRM-002 — LISINOPRIL |
+| **From** | pharmasignal@company.com |
+| **To** | qppv@company.com |
+| **Report ID** | CRM-002 |
+| **Drug** | LISINOPRIL |
+| **Risk Score** | 60/100 |
+| **Escalated by** | dr.smith@pharmasignal.com |
+| **Action required** | Please review within 24 hours |
+| **Narrative** | Full ICH E2B safety narrative included |
+| **Trigger** | Sent automatically on reviewer escalation decision |
+
+---
+
+### 6. GitHub Actions CI Pipeline — All Green
+
+<img width="1200" alt="GitHub Actions CI Pipeline Green" src="https://github.com/user-attachments/assets/6af0d4d5-2757-4363-a795-f0ad20248b50" />
+
+- ✅ **40+ pipeline runs** — all successful
+- ✅ Trivy container security scan — all 5 Docker images
+- ✅ Checkov IaC security scan — Terraform configurations
+- ✅ Lint and Test → Build Docker Images — both stages green
+- ✅ Triggered on every push to main branch
+
+---
 
 **1. PharmaSignal AI — Human Review Dashboard**
 <img width="452" height="195" alt="image" src="https://github.com/user-attachments/assets/356b2a22-7439-4817-85f1-a1a0005eb2ea" />
@@ -674,24 +748,24 @@ This is a portfolio project demonstrating enterprise AI architecture patterns. I
 <img width="452" height="243" alt="image" src="https://github.com/user-attachments/assets/3f81d219-d3fd-4ada-b24b-9cdfcd5b9ace" />
 
 **This shows:**
-•	✅ Triage reasoning — "Angioedema is life-threatening and meets the ICH E2B serious criteria"
-•	✅ Signal Analysis — PRR Score, Risk Score 60/100, FLAG routing
-•	✅ AI-Generated Safety Narrative with all sections visible
-•	✅ Human Review Decision section — Approve · Reject · Escalate to QPPV buttons
-•	✅ Reviewer: dr.smith@pharmasignal.com
+✅ Triage reasoning — "Angioedema is life-threatening and meets the ICH E2B serious criteria"
+✅ Signal Analysis — PRR Score, Risk Score 60/100, FLAG routing
+✅ AI-Generated Safety Narrative with all sections visible
+✅ Human Review Decision section — Approve · Reject · Escalate to QPPV buttons
+✅ Reviewer: dr.smith@pharmasignal.com
 
 **3. Human-in-the-Loop — Case ESCALATED · Full Audit Trail · 21 CFR Part 11 · Reviewer Comments Logged**
 <img width="452" height="247" alt="image" src="https://github.com/user-attachments/assets/84dbd380-ebbb-4951-896f-e35733d5ef13" />
 
 **This SHows:**
-•	✅ Status changed to ESCALATED (purple badge)
-•	✅ ICH E2B narrative visible — all sections
-•	✅ Audit Trail showing two entries: 
+✅ Status changed to ESCALATED (purple badge)
+✅ ICH E2B narrative visible — all sections
+✅ Audit Trail showing two entries: 
 o	CASE_CREATED by agent_orchestrator — 24/05/2026
 o	CASE_ESCALATED by dr.smith@pharmasignal.com — 06/06/2026
 o	Reviewer comment: "Lisinopril-induced angioedema is life-threatening. Confirmed serious case. Escalating to QPPV for urgent review within 24 hours."
-•	✅ Triage reasoning — ICH E2B criteria applied
-•	✅ Risk Score 60/100
+✅ Triage reasoning — ICH E2B criteria applied
+✅ Risk Score 60/100
 
 **4. QPPV Email Notification — URGENT Case Escalated**
 <img width="452" height="134" alt="image" src="https://github.com/user-attachments/assets/0216bc1e-bf8c-4ffa-b251-ee8e382944d1" />
